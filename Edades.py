@@ -1,4 +1,4 @@
-
+#Ok
 Datos={}
 numero=0
 respuesta="S"
