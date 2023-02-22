@@ -12,8 +12,24 @@ valor1=texto5.count("Python")
 print(valor1)
 valor2=texto5.count("python")
 print(valor2)
-
-dato=texto5.find("Python")
+numero_caracteres=len(texto5)
+print(numero_caracteres)
+BUSQUEDA="Python"
+dato=texto5.find(BUSQUEDA)
 print(dato)
+dato1=len(BUSQUEDA)
+dato2=dato+dato1
+otro_dato=texto5.find(BUSQUEDA,dato2,len(texto5))
+print(otro_dato)
+otro_dato1=otro_dato+dato1
+otro_dato2=texto5.find(BUSQUEDA,otro_dato1,len(texto5))
+print(otro_dato2)
+cambio=texto5.replace("Python","PYTHON")  
+print(cambio)                      
+if "código" in texto5:
+    print("ok")                      
+                    
+    
+    
     
     
