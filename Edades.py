@@ -1,4 +1,3 @@
-#ambios
 Datos={}
 numero=0
 respuesta="S"
