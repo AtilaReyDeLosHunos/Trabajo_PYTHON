@@ -1,4 +1,4 @@
-"""from comun.calculo import *
+from comun.calculo import *
 
 #print (dir())
 if __name__=="__main__":
@@ -27,13 +27,13 @@ if __name__=="__main__":
     time.sleep(DORMIR)
     msg_medio()
     time.sleep(DORMIR)
-    msg_final()"""
+    msg_final()
 
 from comun.calculo_area import *
-if __name__=="main":
+if __name__=="__main__":
     base=float(input("Teclea la base"))
     altura=float(input("Teclea la altura"))
-    s=area(10,15)
+    s=area(base,altura)
     print(s)
 
 
