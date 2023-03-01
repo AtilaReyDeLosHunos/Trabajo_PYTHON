@@ -27,6 +27,11 @@ if __name__=="__main__":
     msg_medio()
     time.sleep(DORMIR)
     msg_final()
-
+from comun.calculo_area import *
+if __name__=="__main__":
+    ancho=float(input("Teclea la base: "))
+    largo=float(input("Teclea la altura: "))
+    s=area(ancho,largo)
+    print(s)
 
 
