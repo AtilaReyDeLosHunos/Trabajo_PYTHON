@@ -31,8 +31,8 @@ if __name__=="__main__":
 
 from comun.calculo_area import *
 if __name__=="__main__":
-    base=float(input("Teclea la base: "))
-    altura=float(input("Teclea la altura: "))
+    ancho=float(input("Teclea la base: "))
+    largo=float(input("Teclea la altura: "))
     s=area(base,altura)
     print(s)
 
