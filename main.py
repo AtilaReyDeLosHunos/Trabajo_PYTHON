@@ -1,4 +1,4 @@
-"""from comun.calculo import *
+from comun.calculo import *
 
 #print (dir())
 if __name__=="__main__":
@@ -15,9 +15,10 @@ from comun.repetir_numero import *
 if __name__=="__main__":
     print("Un programa para repetir un numero")
 numero=get_numero()
-repetir_numero(numero)"""
+repetir_numero(numero)
 
 from comun.fun_tiempo import *
+
 import time
 DORMIR=10
 if __name__=="__main__":
@@ -27,11 +28,6 @@ if __name__=="__main__":
     msg_medio()
     time.sleep(DORMIR)
     msg_final()
-from comun.calculo_area import *
-if __name__=="__main__":
-    ancho=float(input("Teclea la base: "))
-    largo=float(input("Teclea la altura: "))
-    s=area(ancho,largo)
-    print(s)
+
 
 
