@@ -1,24 +1,28 @@
 class Vehiculo:
     
-    def __init__(self,marca,modelo,fuel_nivel_actual):
+    def __init__(self,marca,modelo,fuelnivelactual,ruedas,color):
         self.marca=marca
         self.modelo=modelo
-        self.fuel_nivel_actual=fuel_nivel_actual
+        self.fuelnivelactual=fuelnivelactual
+        self.ruedas=ruedas
+        self.color=color
         self.fuel_maximo=10
         self.conduzco=False
-        self.cras=False
         self.estropeado=False
         self.fuel_minimo=5
     def conducir(self):
-        if self.cras==True or self.estropeado==True  :
+        if  self.estropeado==True  :
             print("No puedo conducir")
             
         elif self.fuel_nivel_actual < 5:
             print("Llenar deposito")
             self.llenar_deposito()
+
+
         else:
             print("Puedo conducir")
-           
+            self.fuelnivelactual=self.fuelnivelactual -1
+            print(self.fuelnivelactual)
 
     def llenar_deposito(self):
             self.fuel_maximo=10
@@ -27,12 +31,6 @@ class Vehiculo:
             print("Echo gasolina y puedo conducir")
 
 
-    def chocar(self):
-        if self.cras()==True:
-            self.conduzco=False
-            print("No podemos conducir")
-        else:
-            print("Podemos conducir")
     def averiado(self):
         
         if self.estropeado ==True:
@@ -40,13 +38,35 @@ class Vehiculo:
             print("Vehiculo averiado")
         else:
             print("No averiado")
+class Camion(Vehiculo):
+    def __init__(self,marca,modelo,fuelnivelactual,ruedas,color,cabina):
+        super().__init__(marca,modelo,fuelnivelactual,ruedas,color)
+        self.cabina=cabina
+    def dormir(self):
+        print("Puedo dormir en el camion")
+
+class Moto(Vehiculo):
+    def __init__(self,marca,modelo,fuelnivelactual,ruedas,color,cadena,manillar):
+        super().__init__(marca,modelo,fuelnivelactual,ruedas,color)
+        self.cadena=cadena
+        self.manillar=manillar
+    def hacer_caballito(self):
+        print("Con la moto puedo hacer el caballito")
+
 
 if __name__=="__main__":
     
-    veh1=Vehiculo("Focus","XX4",6)
-    veh1.cras=False
-    veh1.estropeado=True
-    veh1.conducir()
+    veh1=Vehiculo("Focus","XX4",15,4,"Azul")
+    veh1.estropeado=False
+    veh1.llenar_deposito()
+    cam=Camion("Pegaso","cxe4",10,8,"Verde",cabina=True)
+    print(cam.dormir())
+    mot1=Moto("bultaco","fgre",15,2,"Amarillo",8,120)
+    print(mot1.hacer_caballito())
+
+    
+    
+   
     
     
 
