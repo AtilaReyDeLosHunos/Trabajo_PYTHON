@@ -38,13 +38,22 @@ class Vehiculo:
             print("Vehiculo averiado")
         else:
             print("No averiado")
+    def numeroderuedas(self):
+        print("Este vehiculo tiene un múmero diferente de ruedas")
 class Camion(Vehiculo):
-    def __init__(self,marca,modelo,fuelnivelactual,ruedas,color,cabina):
+    def __init__(self,marca,modelo,fuelnivelactual,ruedas,color,cabina=True):
         super().__init__(marca,modelo,fuelnivelactual,ruedas,color)
         self.cabina=cabina
     def dormir(self):
-        print("Puedo dormir en el camion")
-
+        
+        if self.cabina==True:
+            print("Estoy parado y puedo dormir en el camion")
+        else:
+            print("Estoy conduciendo el camion")
+    def numeroderuedas(self):
+        #return super().numeroderuedas()
+        print(f"el camion tiene {self.ruedas} ruedas")
+    
 class Moto(Vehiculo):
     def __init__(self,marca,modelo,fuelnivelactual,ruedas,color,cadena,manillar):
         super().__init__(marca,modelo,fuelnivelactual,ruedas,color)
@@ -52,16 +61,25 @@ class Moto(Vehiculo):
         self.manillar=manillar
     def hacer_caballito(self):
         print("Con la moto puedo hacer el caballito")
+    def numeroderuedas(self):
+        #return super().numeroderuedas()
+         print(f"la moto tiene {self.ruedas} ruedas")
+def cantidadderuedas(tipovehiculo):
+    tipovehiculo.numeroderuedas()
+
 
 
 if __name__=="__main__":
     
-    veh1=Vehiculo("Focus","XX4",15,4,"Azul")
+    veh1=Vehiculo("Focus","XX4",1,4,"Azul")
     veh1.estropeado=False
     veh1.llenar_deposito()
+    cantidadderuedas(veh1)
     cam=Camion("Pegaso","cxe4",10,8,"Verde",cabina=True)
     print(cam.dormir())
+    cantidadderuedas(cam)
     mot1=Moto("bultaco","fgre",15,2,"Amarillo",8,120)
+    cantidadderuedas(mot1)
     print(mot1.hacer_caballito())
 
     
