@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+    <h1>Hola de nuevo Peio</h1>
+    {% if name=="Peio" %}
+    <h1>Hola Peio</h1>
+    {% else %}
+    <h2>Comenzamos en Flask-html, Bienvenido {{name}}</h2>
+    {% endif %}
+{% endblock %}
+    
